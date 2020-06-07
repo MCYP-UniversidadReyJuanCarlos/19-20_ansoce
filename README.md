@@ -3,7 +3,7 @@
   * context
   * config  
   * ejemplos
-    * [Aplicacion Web básica](web/web-basic/Readme.md)
+    * [Aplicacion Web básica](web/web-basic)
     * users in file
     * users in DDBB
     * users in ldap 
