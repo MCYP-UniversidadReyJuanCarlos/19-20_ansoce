@@ -1,7 +1,7 @@
 # Ejemplo básico con SpringBoot
 Se accede la página del asistente de Spring Boot para la creación de proyectos :
 * [Spring initializr](https://start.spring.io/)  
-![alt text](.\doc\Sprin-initializr-00.png "inicio")
+![alt text](./doc/Sprin-initializr-00.png "inicio")
 
 Para este ejemplo básico se seleccionan las siguientes opciones
 * Proyecto Maven
@@ -13,11 +13,11 @@ Para este ejemplo básico se seleccionan las siguientes opciones
   * Spring Web
   * Thymeleaf 
     
-![alt text](.\doc\Sprin-initializr-01.png "Configuración básica")
+![alt text](./doc/Sprin-initializr-01.png "Configuración básica")
 
 Con esta configuración se descarga el proyecto. El contenido es un zip con la siguiente estructura:
 
-![alt text](.\doc\Web-folder.png "Estructura directorios")
+![alt text](./doc/Web-folder.png "Estructura directorios")
 
 Como se puede observar tan solo existen unos pocos ficheros:
 
@@ -49,12 +49,12 @@ Con Maven se puede iniciar el proyecto de la siguiente manera:
 mvn spring-boot:run
 ```
 Tras la descarga de dependencias se podrá observar el inicio de Spring Boot
-![alt text](.\doc\SpringBootFirstStart.png "Inicio Spring Boot")
+![alt text](./doc/SpringBootFirstStart.png "Inicio Spring Boot")
 
 El inicio es correcto y como indica el terminal está disponible en la URL http://localhost:8080
 
 Si se accede a dicha url:
-![alt text](.\doc\WhitelabelErrorPage.png "Inicio Spring Boot")
+![alt text](./doc/WhitelabelErrorPage.png "Inicio Spring Boot")
 
 Esto es debido a que no hay ningún contenido dentro de la aplicación, no existe ninguna página, para solventar esto y apoyándonos en el módulo que se ha puesto como dependencia **Thymeleaf** se crean dos páginas HTML simples:
 
@@ -82,15 +82,15 @@ mvn spring-boot:run
 
 Se accede a ala URL anterior http://localhost:8080, como se indica en la configuración que se ha añadido el path "/" debe re cargar el view index, que esto se traduce en que de la paginas HTML que se han creado buscara la página index.html.
 
-![alt text](.\doc\localhost_root.png "localhost:8080")
+![alt text](./doc/localhost_root.png "localhost:8080")
 
 el mismo resultado se obtiene si se accede a http://localhost:8080/index
  
-![alt text](.\doc\localhost_index.png "localhost:8080/index")
+![alt text](./doc/localhost_index.png "localhost:8080/index")
 
 
 Si se pulsa sobre el enlace se navegara a la pantalla de saludo.
 
-![alt text](.\doc\localhost_hello.png "localhost:8080/hello")
+![alt text](./doc/localhost_hello.png "localhost:8080/hello")
 
 Como se ha podido observar no existe ningún control de acceso a los recursos expuestos. Sobre esta aplicación simple se añadirán los diversos controles de seguridad que ofrece Spring Securiy Web
