@@ -1,2 +1,12 @@
 # 19-20_ansoce
-First   Commit
+* Web
+  * context
+  * config  
+  * ejemplos
+    * [Aplicacion Web básica](./web/web-basic/Readme.md)
+    * users in file
+    * users in DDBB
+    * users in ldap 
+* OAUTH (Spring OAUH Client, Resource Server)
+* JWT (Spring JOSE)
+* OpenID
