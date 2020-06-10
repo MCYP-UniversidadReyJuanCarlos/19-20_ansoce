@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.urjc</groupId>
-	<artifactId>web-security</artifactId>
+	<artifactId>web-security-custom-I</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>web-security</name>
-	<description>web-security example</description>
+	<name>web-security-custom-I</name>
+	<description>web-security-custom-I example</description>
 
 	<properties>
 		<java.version>14</java.version>

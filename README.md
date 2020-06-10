@@ -1,12 +1,23 @@
 # 19-20_ansoce
-* Web
-  * context
-  * config  
-  * ejemplos
-    * [Aplicacion Web básica](web/web-basic)
-    * users in file
-    * users in DDBB
-    * users in ldap 
-* OAUTH (Spring OAUH Client, Resource Server)
-* JWT (Spring JOSE)
-* OpenID
+
+
+
+* **Project title** : Comparativa de métodos de autenticación y autorización en aplicaciones Spring
+* **Project description** :El alumno implementará y comparará diferentes técnicas de autenticación y autorización disponibles dentro del framework de desarrollo Spring. Concretamente se analizarán Basic Auth, JWT y OAUTH 2. Se realizarán pruebas de seguridad de las técnicas implementadas y se discutirán ventajas y desventajas de los tres en base a diferentes criterios. 
+* Features :
+  * Web
+    * context
+    * config  
+    * ejemplos
+      * [Aplicacion Web básica](web/web-basic)
+      * users in file
+      * users in DDBB
+      * users in ldap 
+  * OAUTH (Spring OAUH Client, Resource Server)
+  * JWT (Spring JOSE)
+  * OpenID
+* How to run
+* Basic usage
+* Development documentation
+* Architecture
+* Prepare development/execution environment
