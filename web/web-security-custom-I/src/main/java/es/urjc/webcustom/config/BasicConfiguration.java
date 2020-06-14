@@ -23,6 +23,19 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
+//        http.authorizeRequests().anyRequest().permitAll();
+//        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
+        http
+                .requiresChannel()
+                .anyRequest()
+                .requiresSecure()
+                .and()
+                .authorizeRequests()
+                .antMatchers( "/index","/js/*","/css/*","/images/*").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
     }
 }
