@@ -1,4 +1,4 @@
-package es.urjc.webcustom;
+package es.urjc.webcustomnosql;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

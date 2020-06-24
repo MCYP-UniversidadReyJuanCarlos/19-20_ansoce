@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  mysql-service:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    networks:
+      - spring-boot-mysql-network
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=jdbc_authentication
+    ports:
+      - "3306:3306"
+  web-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
+    networks:
+      - spring-boot-mysql-network
+    depends_on:
+      - mysql-service
+networks:
+  spring-boot-mysql-network:
+    driver: bridge

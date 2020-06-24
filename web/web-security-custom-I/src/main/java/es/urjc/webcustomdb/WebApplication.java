@@ -1,4 +1,4 @@
-package es.urjc.webcustom;
+package es.urjc.webcustomdb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

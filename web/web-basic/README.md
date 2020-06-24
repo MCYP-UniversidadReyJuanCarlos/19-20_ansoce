@@ -49,11 +49,13 @@ Con Maven se puede iniciar el proyecto de la siguiente manera:
 mvn spring-boot:run
 ```
 Tras la descarga de dependencias se podrá observar el inicio de Spring Boot
+
 ![alt text](./doc/SpringBootFirstStart.png "Inicio Spring Boot")
 
 El inicio es correcto y como indica el terminal está disponible en la URL http://localhost:8080
 
 Si se accede a dicha url:
+
 ![alt text](./doc/WhitelabelErrorPage.png "Inicio Spring Boot")
 
 Esto es debido a que no hay ningún contenido dentro de la aplicación, no existe ninguna página, para solventar esto y apoyándonos en el módulo que se ha puesto como dependencia **Thymeleaf** se crean dos páginas HTML simples:

@@ -16,6 +16,8 @@
         <module>web/web-basic</module>
         <module>web/web-basic-security</module>
         <module>web/web-security-custom-I</module>
+        <module>web/web-security-db</module>
+        <module>web/web-security-db-nosql</module>
     </modules>
     
 </project>

@@ -1,4 +1,4 @@
-package es.urjc.webcustom;
+package es.urjc.webcustomdb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
