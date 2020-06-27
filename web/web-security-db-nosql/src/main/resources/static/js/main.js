@@ -1,5 +1,5 @@
 var working = false;
-$('.login').on('submit', function(e) {
+$('.login').on('submit', function (e) {
     e.preventDefault();
     if (working) return;
     working = true;
@@ -7,10 +7,10 @@ $('.login').on('submit', function(e) {
         $state = $this.find('button > .state');
     $this.addClass('loading');
     $state.html('Authenticating');
-    setTimeout(function() {
+    setTimeout(function () {
         $this.addClass('ok');
         $state.html('Welcome back!');
-        setTimeout(function() {
+        setTimeout(function () {
             $state.html('Log in');
             $this.removeClass('ok loading');
             working = false;

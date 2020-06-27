@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-    <head>
-        <title>Web Basic Security</title>
-        <link rel="stylesheet" href="/css/main.css"/>
-        <link rel="script" href="/js/main.js"/>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="login">
-                <p class="title">¡Bienvenido!</p>
-                <a th:href="@{/hello}">
-                    <button>
-                        <i class="spinner"></i>
-                        <span class="state">Obtenga un saludo aqu&iacute;.</span>
-                    </button>
-                </a>
-            </div>
-        </div>
-    </body>
+<head>
+    <title>Web Basic Security</title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/js/main.js" rel="script"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="login">
+        <p class="title">¡Bienvenido!</p>
+        <a th:href="@{/hello}">
+            <button>
+                <i class="spinner"></i>
+                <span class="state">Obtenga un saludo aqu&iacute;.</span>
+            </button>
+        </a>
+    </div>
+</div>
+</body>
 </html>

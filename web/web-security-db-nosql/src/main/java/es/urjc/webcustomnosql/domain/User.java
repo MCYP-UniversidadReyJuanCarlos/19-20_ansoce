@@ -1,6 +1,5 @@
 package es.urjc.webcustomnosql.domain;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,69 +12,70 @@ import java.util.List;
 @Document
 public class User implements UserDetails {
 
-    @Id
-    public String id;
-    private String username;
-    private String password;
-    private boolean enabled;
-    private List<SimpleGrantedAuthority> roles;
+	@Id
+	public String id;
 
+	private String username;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles;
-    }
+	private String password;
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
+	private boolean enabled;
 
-    @Override
-    public String getUsername() {
-        return username;
-    }
+	private List<SimpleGrantedAuthority> authorities;
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.authorities;
+	}
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+	public void setAuthorities(List<SimpleGrantedAuthority> authorities) {
+		this.authorities = authorities;
+	}
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+	@Override
+	public String getPassword() {
+		return this.password;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	@Override
+	public String getUsername() {
+		return this.username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
 
-    public void setRoles(List<SimpleGrantedAuthority> roles) {
-        this.roles = roles;
-    }
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
 
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 }
-
-

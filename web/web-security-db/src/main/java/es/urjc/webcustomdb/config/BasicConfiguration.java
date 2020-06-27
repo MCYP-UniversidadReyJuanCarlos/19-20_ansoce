@@ -16,35 +16,27 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private DataSource dataSource;
+	@Autowired
+	private DataSource dataSource;
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-        auth.jdbcAuthentication().passwordEncoder(passwordEncoder()).dataSource(dataSource);
-    }
+		auth.jdbcAuthentication().passwordEncoder(passwordEncoder()).dataSource(this.dataSource);
+	}
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().anyRequest().permitAll();
-//        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-        http
-                .requiresChannel()
-                .anyRequest()
-                .requiresSecure()
-                .and()
-                .authorizeRequests()
-                .antMatchers( "/index","/js/*","/css/*","/images/*").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
-    }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		// http.authorizeRequests().anyRequest().permitAll();
+		// http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
+		http.requiresChannel().anyRequest().requiresSecure().and().authorizeRequests()
+				.antMatchers("/index", "/js/*", "/css/*", "/images/*").permitAll().anyRequest().authenticated().and()
+				.formLogin().loginPage("/login").permitAll();
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
 }
