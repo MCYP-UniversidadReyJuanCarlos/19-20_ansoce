@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Bienvenido</title>
     <link href="/css/main.css" rel="stylesheet"/>
@@ -8,8 +9,14 @@
 <body>
 <div class="wrapper">
     <div class="login">
-        <p class="title">¡HOLA!</p>
+        <p class="title">¡HOLA [[${#httpServletRequest.remoteUser}]]!</p>
     </div>
+    <form class="login" th:action="@{/logout}" method="post">
+        <button class="logout">
+            <i class="spinner"></i>
+            <span class="state">Logout</span>
+        </button>
+    </form>
 </div>
 </body>
 </html>

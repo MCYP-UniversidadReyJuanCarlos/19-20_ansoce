@@ -32,4 +32,4 @@ INSERT INTO users (username, password, enabled)
 INSERT INTO authorities (username, authority)
   values ('user', 'ROLE_USER');
 INSERT INTO authorities (username, authority)
-  values ('admin', 'ADMIN_USER');
+  values ('admin', 'ROLE_ADMIN');

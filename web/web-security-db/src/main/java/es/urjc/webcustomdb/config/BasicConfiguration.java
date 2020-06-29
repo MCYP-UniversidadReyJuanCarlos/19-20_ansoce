@@ -30,8 +30,11 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 		// http.authorizeRequests().anyRequest().permitAll();
 		// http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
 		http.requiresChannel().anyRequest().requiresSecure().and().authorizeRequests()
-				.antMatchers("/index", "/js/*", "/css/*", "/images/*").permitAll().anyRequest().authenticated().and()
-				.formLogin().loginPage("/login").permitAll();
+				.antMatchers("/index", "/js/*", "/css/*", "/images/*", "/font-awesome/**").permitAll()
+				.antMatchers("/admin").access("hasRole('ROLE_ADMIN')").anyRequest().authenticated().and().formLogin()
+				.loginPage("/login").permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
+				.invalidateHttpSession(true).deleteCookies("JSESSIONID").and().exceptionHandling()
+				.accessDeniedPage("/accessDenied");
 	}
 
 	@Bean

@@ -16,7 +16,7 @@ services:
   web-service:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - "8443:8443"
       - "5005:5005"
@@ -27,3 +27,4 @@ services:
 networks:
   spring-boot-mysql-network:
     driver: bridge
+

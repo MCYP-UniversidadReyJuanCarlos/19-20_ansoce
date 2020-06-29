@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  jenkins:
+    container_name: jenkins
+    build: ./jenkins
+    ports:
+      - 8181:8080
+      - 50000:50000
+    environment:
+      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+      - JENKINS_ADMIN_USER=admin
+      - JENKINS_ADMIN_PASS=adminpwd
+      - JENKINS_DEV_USER=user1
+      - JENKINS_DEV_PASS=user1pwd
+      - ROOT_URL=jenkins
+    volumes:
+      - .:/var/src
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - asc-network
+networks:
+  asc-network:
+    driver: bridge

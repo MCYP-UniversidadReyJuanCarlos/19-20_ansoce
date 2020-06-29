@@ -28,26 +28,14 @@ public class User implements UserDetails {
 		return this.authorities;
 	}
 
-	public void setAuthorities(List<SimpleGrantedAuthority> authorities) {
-		this.authorities = authorities;
-	}
-
 	@Override
 	public String getPassword() {
 		return this.password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Override
 	public String getUsername() {
 		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	@Override
@@ -69,13 +57,25 @@ public class User implements UserDetails {
 		this.id = id;
 	}
 
-	@Override
-	public boolean isEnabled() {
-		return this.enabled;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public void setAuthorities(List<SimpleGrantedAuthority> authorities) {
+		this.authorities = authorities;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return this.enabled;
 	}
 
 }

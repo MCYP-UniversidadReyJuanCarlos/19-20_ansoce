@@ -16,6 +16,20 @@
             </button>
         </a>
     </div>
+    <div class="login">
+        <a th:href="@{/admin}">
+            <button>
+                <i class="spinner"></i>
+                <span class="state">¿Es usted administrador?</span>
+            </button>
+        </a>
+    </div>
+    <form class="login" th:action="@{/logout}" method="post">
+        <button class="logout">
+            <i class="spinner"></i>
+            <span class="state">Logout</span>
+        </button>
+    </form>
 </div>
 </body>
 </html>
