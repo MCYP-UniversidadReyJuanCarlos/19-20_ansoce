@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 14
     - name: Build with Maven
-      run: xvfb-run mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
         # These two env variables are needed for sonar analysis
         GITHUB_TOKEN: ${{ secrets.REPOSITORY_ACCESS_TOKEN }}
