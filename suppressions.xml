@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+    <!-- For windows compiler -->
+    <suppress checks="NewlineAtEndOfFile"/>
+    <!-- easy import -->
+    <suppress checks="SpringImportOrder"/>
+    <!-- @id on  org.springframework.data.annotation.Id -->
+    <suppress checks="JavadocVariable"/>
+</suppressions>

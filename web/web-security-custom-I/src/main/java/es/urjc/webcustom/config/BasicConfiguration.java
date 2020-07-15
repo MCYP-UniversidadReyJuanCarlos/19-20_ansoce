@@ -11,18 +11,20 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class BasicConfiguration extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder encoder =
-                PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        auth.inMemoryAuthentication()
-                .withUser("user").password(encoder.encode("password")).roles("USER")
-                .and()
-                .withUser("admin").password(encoder.encode("admin")).roles("USER", "ADMIN");
-    }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-    }
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+		auth.inMemoryAuthentication().withUser("user").password(encoder.encode("password")).roles("USER").and()
+				.withUser("admin").password(encoder.encode("admin")).roles("ADMIN");
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.requiresChannel().anyRequest().requiresSecure().and().authorizeRequests()
+				.antMatchers("/index", "/js/*", "/css/*", "/images/*", "/font-awesome/**").permitAll().anyRequest()
+				.authenticated().and().formLogin().loginPage("/login").permitAll().and().logout().logoutUrl("/logout")
+				.logoutSuccessUrl("/login").invalidateHttpSession(true).deleteCookies("JSESSIONID");
+	}
+
 }

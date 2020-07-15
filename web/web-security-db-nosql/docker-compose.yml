@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  mongodb-service:
+    build:
+      context: ./mongodb
+      dockerfile: Dockerfile
+    networks:
+      - spring-boot-mysql-network
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: jdbc_authentication
+    ports:
+      - "27017:27017"
+  web-service:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "8443:8443"
+      - "5005:5005"
+    networks:
+      - spring-boot-mysql-network
+    depends_on:
+      - mongodb-service
+networks:
+  spring-boot-mysql-network:
+    driver: bridge
+

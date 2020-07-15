@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Spring web</title>
+    <title>Web Custom I</title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/js/main.js" rel="script"/>
 </head>
 <body>
-<h1>Bienvenido!</h1>
-
-<p>Obtenga un saludo: <a th:href="@{/hello}">aqui</a>.</p>
+<div class="wrapper">
+    <div class="login">
+        <p class="title">¡Bienvenido!</p>
+        <a th:href="@{/hello}">
+            <button>
+                <i class="spinner"></i>
+                <span class="state">Obtenga un saludo aqu&iacute;.</span>
+            </button>
+        </a>
+    </div>
+    <form class="login" th:action="@{/logout}" method="post">
+        <button class="logout">
+            <i class="spinner"></i>
+            <span class="state">Logout</span>
+        </button>
+    </form>
+</div>
 </body>
 </html>

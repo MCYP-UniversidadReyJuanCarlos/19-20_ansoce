@@ -17,6 +17,24 @@
   * JWT (Spring JOSE)
   * OpenID
 * How to run
+Cada uno de los proyectos se puede lanzar individualmente con su docker-compose con el comando:
+````shell script
+docker-compose up -d
+````
+y para parar con
+````shell script
+docker-compose down
+```` 
+También se integra un jenkins con una serie de tareas que permiten lanzar cada uno de los ejemplos de forma sencilla. Para arrancar el jenkins se ejecuta en la raíz del proyecto:
+
+````shell script
+docker-compose up -d
+````
+y para parar con
+````shell script
+docker-compose down
+```` 
+La clave por defecto de jenkins es admin/adminpass.
 * Basic usage
 * Development documentation
 * Architecture
