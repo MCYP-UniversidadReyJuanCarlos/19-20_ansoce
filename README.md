@@ -1,5 +1,5 @@
-# 19-20_ansoce 
-
+# Spring-Security 
+[![Actions Status](https://github.com/MCYP-UniversidadReyJuanCarlos/19-20_ansoce/workflows/maven/badge.svg)](https://github.com/MCYP-UniversidadReyJuanCarlos/19-20_ansoce/actions)
 
 
 * **Project title** : Comparativa de métodos de autenticación y autorización en aplicaciones Spring
@@ -10,9 +10,11 @@
     * config  
     * ejemplos
       * [Aplicacion Web básica](web/web-basic)
-      * users in file
-      * users in DDBB
-      * users in ldap 
+      * [Aplicacion Web Securizada básica](web/web-basic-security)
+      * [users in file](web/web-security-custom-I)
+      * [users in DDBB](web/web-security-db)
+      * [users in DDBB noSQL](web/web-security-nosql)
+      * [users in ldap](web/web-security-ldap)
   * OAUTH (Spring OAUH Client, Resource Server)
   * JWT (Spring JOSE)
   * OpenID
