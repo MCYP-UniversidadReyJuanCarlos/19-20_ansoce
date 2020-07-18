@@ -9,8 +9,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>web-security</name>
     <description>web-security</description>
-    <dependencies>
-    </dependencies>
     <modules>
         <module>web-basic</module>
         <module>web-basic-security</module>
