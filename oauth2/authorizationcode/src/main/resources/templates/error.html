@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Error</title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/js/main.js" rel="script"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="login">
+        <p class="title">Se ha producido un error</p>
+        <p th:if="${errorCode}" >
+            <span th:text="${errorCode}">errorCode</span>
+        </p>
+        <p th:if="${error}" >
+            <span th:text="${error}">error</span>
+        </p>
+    </div>
+    <form class="login" th:action="@{/logout}" method="post">
+        <button class="logout">
+            <i class="spinner"></i>
+            <span class="state">Logout</span>
+        </button>
+    </form>
+</div>
+</body>
+</html>

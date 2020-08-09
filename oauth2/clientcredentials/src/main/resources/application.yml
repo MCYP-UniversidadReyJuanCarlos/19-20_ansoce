@@ -1,0 +1,33 @@
+server:
+  port: 9090
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+#    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          custom-client:
+            client-id: user
+            client-secret: secret
+            client-name: user
+            scope: user
+            provider: custom-provider
+            redirect-uri: "{baseUrl}/authorized"
+            client-authentication-method: basic
+            authorization-grant-type: client_credentials
+        provider:
+          custom-provider:
+            token-uri: http://authorizationserver:8081/oauth/token
+            authorization-uri: http://authorizationserver:8081/oauth/authorize
+messages:
+  base-uri: http://resourceserver:8080/
