@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  authorizationserver:
+    build:
+      context: ./authorizationserver
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+      - "5005:5005"
+    volumes:
+      - m2-repo:/root/.m2/repository
+    networks:
+      - spring-boot-network
+  resourceserver:
+    build:
+      context: ./resourceserver
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "5006:5005"
+    volumes:
+      - m2-repo:/root/.m2/repository
+    networks:
+      - spring-boot-network
+  client:
+    build:
+      context: ./authorizationcode
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+      - "5007:5005"
+    volumes:
+      - m2-repo:/root/.m2/repository
+    networks:
+      - spring-boot-network
+networks:
+  spring-boot-network:
+    driver: bridge
+volumes:
+  m2-repo:

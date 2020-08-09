@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Web Custom I</title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/js/main.js" rel="script"/>
+</head>
+<body>
+<div class="wrapper">
+
+
+        <form class="login" method="post" th:action="@{/message}">
+            <input autofocus name="username" placeholder="Username" type="text"/>
+            <i class="fa fa-user"></i>
+            <input name="password" placeholder="Password" type="password"/>
+            <i class="fa fa-key"></i>
+            <button>
+                <i class="spinner"></i>
+                <span class="state">Obtenga un mensaje.</span>
+            </button>
+
+        </form>
+        </p>
+
+
+    <form class="login" th:action="@{/messageadmin}" method="post">
+        <button >
+            <i class="spinner"></i>
+            <span class="state">Obtenga un mensaje de administrador.</span>
+        </button>
+    </form>
+
+    <form class="login" th:action="@{/logout}" method="post">
+        <button class="logout">
+            <i class="spinner"></i>
+            <span class="state">Logout</span>
+        </button>
+    </form>
+</div>
+</body>
+</html>

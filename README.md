@@ -13,7 +13,7 @@
       * [Aplicacion Web Securizada básica](web/web-basic-security)
       * [users in file](web/web-security-custom-I)
       * [users in DDBB](web/web-security-db)
-      * [users in DDBB noSQL](web/web-security-nosql)
+      * [users in DDBB noSQL](web/web-security-db-nosql)
       * [users in ldap](web/web-security-ldap)
   * OAUTH (Spring OAUH Client, Resource Server)
   * JWT (Spring JOSE)
@@ -36,7 +36,7 @@ y para parar con
 ````shell script
 docker-compose down
 ```` 
-La clave por defecto de jenkins es admin/adminpass.
+La clave por defecto de jenkins es admin/adminpwd.
 * Basic usage
 * Development documentation
 * Architecture
