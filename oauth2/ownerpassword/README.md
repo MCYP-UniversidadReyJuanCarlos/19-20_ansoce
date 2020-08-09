@@ -1,4 +1,4 @@
-##Resource Owner Password Credentials Grant
+## Resource Owner Password Credentials Grant
 
 En "Resource Owner Password Credentials Grant" el usuario debe de intervenir proporcionando su usuario y contraseña no al servidor de autorización si no a la aplicación cliente.
 Esta situación implica que los dueños del recurso deben confiar plenamente en la aplicación para introducir sus credenciales.
@@ -22,20 +22,14 @@ Esta situación implica que los dueños del recurso deben confiar plenamente en 
      |         |    (w/ Optional Refresh Token)   |               |
      +---------+                                  +---------------+
  
-   (A) El propietario del recurso proporciona al cliente su nombre de usuario y 
-        contraseña. 
+ - **(A)** El propietario del recurso proporciona al cliente su nombre de usuario y contraseña. 
 
-   (B) El cliente solicita un token de acceso desde el 
-        punto final del token del servidor de autorización al incluir las credenciales recibidas 
-        del propietario del recurso. Al realizar la solicitud, el cliente se 
-        autentica con el servidor de autorización. 
+ - **(B)** El cliente solicita un token de acceso desde el punto final del token del servidor de autorización al incluir las credenciales recibidas del propietario del recurso. Al realizar la solicitud, el cliente se autentica con el servidor de autorización. 
 
-   (C) El servidor de autorización autentica al cliente y valida 
-        las credenciales del propietario del recurso y, si es válido, emite un 
-        token de acceso
+ - **(C)** El servidor de autorización autentica al cliente y valida las credenciales del propietario del recurso y, si es válido, emite un token de acceso
  
  
-#Flujo desde navegador
+# Flujo desde navegador
 Se accede a http://127.0.0.1:9090
 
 ![alt text](./doc/clientApp01.png "App-01")
@@ -54,7 +48,8 @@ Se Obtiene el mensaje solicitado
 
 ![alt text](./doc/clientApp05.png "App-05")
 
-#Capturas de tráfico con wireshark de una solicitud correcta
+# Capturas de tráfico con wireshark de una solicitud correcta
+
 ![alt text](./doc/wireFlow01.png "flow")
 
 ![alt text](./doc/wireFlow02.png "flow")

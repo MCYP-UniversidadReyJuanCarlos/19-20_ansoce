@@ -1,8 +1,8 @@
-##Client Credentials Grant
-
+## Client Credentials Grant
 
 El "client credentials grant type" **DEBE** ser utilizado únicamente por clientes confidenciales. 
 [Referencia](https://tools.ietf.org/html/rfc6749#section-4.4)
+
        +---------+                                  +---------------+
        |         |                                  |               |
        |         |>--(A)- Client Authentication --->| Authorization |
@@ -11,12 +11,12 @@ El "client credentials grant type" **DEBE** ser utilizado únicamente por client
        |         |                                  |               |
        +---------+                                  +---------------+
  
- - (A) El cliente se autentica con el servidor de autorización y solicita un token de acceso desde el punto final del token. 
- - (B) El servidor de autorización autentica al cliente y, si es válido, emite un token de acceso.
+ - **(A)** El cliente se autentica con el servidor de autorización y solicita un token de acceso desde el punto final del token. 
+ - **(B)** El servidor de autorización autentica al cliente y, si es válido, emite un token de acceso.
  
  ![alt text](./doc/client-creds.png "flow")
  
- #Flujo:
+ # Flujo:
  - Se crea un servidor de autorización ()
  - Se crea un servidor de recursos ()
  - Como aplicación cliente se usa un postman () 
@@ -42,7 +42,7 @@ El "client credentials grant type" **DEBE** ser utilizado únicamente por client
    --header 'Authorization: bearer {Token}'
    ````
 
-#Flujo desde navegador
+# Flujo desde navegador
 Se accede a http://127.0.0.1:9090
 
 ![alt text](./doc/clientApp01.png "App-01")
@@ -62,9 +62,15 @@ Se solicita un mensaje de administrador que requiere permisos de admin que la ap
 ![alt text](./doc/clientApp05.png "App-05")
 
 #Capturas de tráfico con wireshark de una solicitud correcta
+
 ![alt text](./doc/wireFlow01.png "flow")
+
 ![alt text](./doc/wireFlow02.png "flow")
+
 ![alt text](./doc/wireFlow03.png "flow")
+
 ![alt text](./doc/wireFlow04.png "flow")
+
 ![alt text](./doc/wireFlow05.png "flow")
+
 ![alt text](./doc/wireFlow06.png "flow")

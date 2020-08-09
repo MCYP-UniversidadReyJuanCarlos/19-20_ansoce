@@ -9,20 +9,20 @@ Se deben diferenciar dos conceptos: **autorización** y **autenticación**:
  - Autorización: Proceso por el cual se obtiene que puedes hacer (Permisos)
  con estos términos definidos OAuth no es un protocolo de autenticación como se ha definido anteriormente es un framework que permite delegar la autorización.
  
- ##Ventajas
+## Ventajas
  - Protocolo muy flexible
  - Acceso limitado, los tokens manejados caducan y con los scopes limitan la funcionalidad.
  - Permite compartir información de forma anónima, los token no contienen información de los usuarios.
  - Gran comunidad e integración con multitud de frameworks y SDKs.
  
  
-##Actores en OAuth 2.0
+## Actores en OAuth 2.0
  - Propietario del recurso (Resource Owner): El usuario que cuenta con la propiedad de los recursos a los que se quiere acceder
  - Aplicación cliente (Client): Aplicación que realiza las consultas a los recursos en nombre del propietario del recurso.
  - Servidor de autorización (Authorization Server): El servidor que emite tokens de acceso al cliente después de haber realizado correctamente autenticar al propietario del recurso y obtener autorización.
  - Servidor de recursos (Resource Server): Servidor que expone los datos a los que se quiere acceder.
  
-##Flujos de OAuth
+## Flujos de OAuth
 El esquema siguiente muestra un flujo abstracto de interacción entre los 4 roles
 
      +--------+                               +---------------+
@@ -45,7 +45,7 @@ El esquema siguiente muestra un flujo abstracto de interacción entre los 4 role
      
 Referencia en [link](https://tools.ietf.org/html/rfc6749#section-1.2)
      
-##Tipos (grant type)     
+## Tipos (grant type)     
  - [Client credentials](clientcredentials/README.md)
  - [Resource Owner Password](ownerpassword/README.md)
  - [Authorization code](authorizationcode/README.md)
