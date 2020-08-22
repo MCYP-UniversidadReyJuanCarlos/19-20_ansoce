@@ -1,0 +1,92 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.39">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.7.1"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.7.1">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.1.1"/>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.TextParameterDefinition>
+          <name>googleclientsecret</name>
+          <description>Id de cliente de registro en google</description>
+          <defaultValue>googleclientsecret</defaultValue>
+          <trim>false</trim>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>googleclientid</name>
+          <description>Password en google del clientId</description>
+          <defaultValue>XXX.apps.googleusercontent.com</defaultValue>
+          <trim>false</trim>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>oktaclientsecret</name>
+          <description></description>
+          <defaultValue>oktaclientsecret</defaultValue>
+          <trim>false</trim>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>oktaclientid</name>
+          <description></description>
+          <defaultValue>oktaclientid</defaultValue>
+          <trim>false</trim>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>oktadomain</name>
+          <description></description>
+          <defaultValue>https://dev-xxxx.okta.com/oauth2/tfm</defaultValue>
+          <trim>false</trim>
+        </hudson.model.TextParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty plugin="gitlab-plugin@1.5.13">
+      <gitLabConnection></gitLabConnection>
+    </com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.82">
+    <script>pipeline {
+    agent { label &apos;master&apos; }
+    stages {
+        stage(&apos;stop&apos;) {
+            steps {
+                echo &quot;stop all previous containers&quot;
+                sh &quot;pwd&quot;
+                dir(&apos;/var/src&apos;){
+                    sh &quot;pwd&quot;
+                    sh &quot;ls &quot;
+                    sh &quot;find ./*/ -name &apos;docker-compose*.yml&apos; -exec docker-compose -f {} down \\;&quot;
+                }     
+            }
+        }
+        stage(&apos;build&apos;) {
+            steps {
+                dir(&apos;/var/src/openid&apos;){
+                 sh &quot;pwd&quot;
+                 sh &quot;ls &quot;
+                 sh &quot;env&quot;
+                 sh &quot;docker-compose -f docker-compose-authcli.yml up --build --force-recreate -d&quot;
+                }
+
+            }
+        }
+        stage(&apos;visita http://localhost:9090&apos;) {
+            steps {
+                echo &quot;Autenticacion vía OIDC&quot;
+         
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
