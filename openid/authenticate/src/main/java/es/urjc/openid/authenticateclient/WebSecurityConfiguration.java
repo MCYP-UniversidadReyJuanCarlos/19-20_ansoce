@@ -17,8 +17,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-				.authorizeRequests().antMatchers("/js/*", "/css/*", "/images/*", "/font-awesome/**").permitAll()
+		http.authorizeRequests().antMatchers("/js/*", "/css/*", "/images/*", "/font-awesome/**").permitAll()
 				.anyRequest().fullyAuthenticated().and().logout().logoutSuccessHandler(oidcLogoutSuccessHandler())
 				.invalidateHttpSession(true).deleteCookies("JSESSIONID").and().exceptionHandling()
 				.accessDeniedPage("/accessDenied").and().oauth2Client().and().oauth2Login().userInfoEndpoint();

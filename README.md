@@ -16,18 +16,17 @@
       * [users in DDBB noSQL](web/web-security-db-nosql)
       * [users in ldap](web/web-security-ldap)
   * OAUTH (Spring OAUH Client, Resource Server)
-  * JWT (Spring JOSE)
+      * [OAuth 2 Client Credentials Flow](oauth2/clientcredentials)
+      * [OAuth 2 Owner Password Flow](oauth2/ownerpassword)
+      * [OAuth 2 Authorization Code Flow](oauth2/authorizationcode)
+      * [OAuth 2 Implicit Flow](oauth2/implicit)
   * OpenID
+      * [OIDC Autenthicate](openid/authenticate)
+      * [OIDC Autenthicate & resource server](openid/cliente)
 * How to run
-Cada uno de los proyectos se puede lanzar individualmente con su docker-compose con el comando:
-````shell script
-docker-compose up -d
-````
-y para parar con
-````shell script
-docker-compose down
+
 ```` 
-También se integra un jenkins con una serie de tareas que permiten lanzar cada uno de los ejemplos de forma sencilla. Para arrancar el jenkins se ejecuta en la raíz del proyecto:
+se integra un jenkins con una serie de tareas que permiten lanzar cada uno de los ejemplos de forma sencilla. Para arrancar el jenkins se ejecuta en la raíz del proyecto:
 
 ````shell script
 docker-compose up -d
@@ -36,8 +35,12 @@ y para parar con
 ````shell script
 docker-compose down
 ```` 
-La clave por defecto de jenkins es admin/adminpwd.
-* Basic usage
-* Development documentation
-* Architecture
-* Prepare development/execution environment
+![alt text](./jenkins/doc/jenkins01.png "jenkins-01")
+ 
+Se accede a la [consola de jenkins](http://localhost:8181)
+
+![alt text](./jenkins/doc/jenkins02.png "jenkins-02")
+
+El usuario de acceso es admin/adminpwd
+
+![alt text](./jenkins/doc/jenkins03.png "jenkins-03")

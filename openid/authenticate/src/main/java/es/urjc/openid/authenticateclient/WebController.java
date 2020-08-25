@@ -29,7 +29,7 @@ public class WebController {
 		model.addAttribute("userRoles",
 				(oauth2User != null)
 						? oauth2User.getAuthorities().stream().filter((sc) -> sc instanceof OidcUserAuthority)
-						.map((sc) -> sc.toString()).collect(Collectors.toList())
+								.map((sc) -> sc.toString()).collect(Collectors.toList())
 						: null);
 		return "index";
 	}
