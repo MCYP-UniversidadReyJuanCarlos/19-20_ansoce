@@ -1,0 +1,20 @@
+server:
+  port: 8081
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          #jwk-set-uri:  https://dev-XXXX.okta.com/oauth2/tfm/v1/keys
+          #issuer-uri: https://dev-XXXX.okta.com/oauth2/tfm/.well-known/oauth-authorization-server
+          #jwk-set-uri: https://accounts.google.com/.well-known/openid-configuration
+          #issuer-uri: https://accounts.google.com
+          issuer-uri: http://keycloak:8080/auth/realms/TFM
+

@@ -1,0 +1,52 @@
+version: "3.7"
+services:
+  keycloak:
+    build:
+      context: ./keycloak
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+      - ./authenticate/realm-export.json:/tmp/realm-export.json
+    networks:
+      - spring-boot-network
+  resourceserver:
+    build:
+      context: ./resourceserver
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+      - "5006:5005"
+    volumes:
+      - m2-repo:/root/.m2/repository
+    networks:
+      - spring-boot-network
+    restart: on-failure
+    depends_on:
+      - keycloak
+  authorizationserver:
+    build:
+      context: ./cliente
+      dockerfile: Dockerfile
+      args:
+        googleclientsecret: "${googleclientsecret}"
+        googleclientid: "${googleclientid}"
+        oktaclientsecret: "${oktaclientsecret}"
+        oktaclientid: "${oktaclientid}"
+        oktadomain: "${oktadomain}"
+    ports:
+      - "9090:9090"
+      - "5005:5005"
+    volumes:
+      - m2-repo:/root/.m2/repository
+    networks:
+      - spring-boot-network
+    depends_on:
+      - keycloak
+    restart: on-failure
+networks:
+  spring-boot-network:
+    driver: bridge
+volumes:
+  m2-repo:

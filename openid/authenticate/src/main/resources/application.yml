@@ -1,0 +1,37 @@
+server:
+  port: 9090
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          custom-google:
+            client-secret: google_client_secret_value
+            client-id: google_client_id_value
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+          keycloak:
+            client-id: 'openid-client'
+            client-secret: '2f97a220-82d6-417e-b14b-eb1b1c9f95cf'
+            authorizationGrantType: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://keycloak:8080/auth/realms/TFM
+            user-name-attribute: name
+          custom-google:
+            issuer-uri: https://accounts.google.com
+okta:
+  oauth2:
+    issuer: okta_domain
+    client-id: okta_clientid
+    client-secret: okta_client_secret
