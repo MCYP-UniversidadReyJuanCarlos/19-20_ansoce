@@ -15,6 +15,7 @@
     <description>OIDC Resource Server</description>
     <properties>
         <java.version>14</java.version>
+        <maven.test.skip>true</maven.test.skip>
     </properties>
     <dependencies>
 
