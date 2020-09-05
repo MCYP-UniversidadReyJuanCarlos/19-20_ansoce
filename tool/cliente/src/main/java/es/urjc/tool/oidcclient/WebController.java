@@ -41,8 +41,8 @@ public class WebController {
 	}
 
 	@PostMapping
-	public void configValidations(@ModelAttribute VariablesConfig payload){
-		this.variablesConfig=payload;
+	public void configValidations(@ModelAttribute VariablesConfig payload) {
+		this.variablesConfig = payload;
 	}
 
 }
