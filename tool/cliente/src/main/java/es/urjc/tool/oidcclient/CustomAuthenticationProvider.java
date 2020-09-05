@@ -48,7 +48,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	private static final String INVALID_ID_TOKEN_ERROR_CODE = "invalid_id_token";
 
-
 	private final OAuth2AccessTokenResponseClient<OAuth2AuthorizationCodeGrantRequest> accessTokenResponseClient;
 
 	private final OAuth2UserService<OidcUserRequest, OidcUser> userService;

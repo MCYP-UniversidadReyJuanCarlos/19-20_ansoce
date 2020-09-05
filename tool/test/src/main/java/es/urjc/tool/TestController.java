@@ -20,6 +20,8 @@ public class TestController {
 
 	private WebDriver driver;
 
+	private boolean bWorking = false;
+
 	JavascriptExecutor js;
 
 	private final VariablesConfig variablesConfig;
@@ -30,10 +32,19 @@ public class TestController {
 
 	@PostMapping("/test")
 	public String test(@ModelAttribute Payload payload, Model model) {
-		List<String> Errors = new ArrayList<>();
+		List<String> errors = new ArrayList<>();
 		String result = "badConfig";
-
+		while (this.bWorking) {
+			try {
+				Thread.sleep(2000);
+			}
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		try {
+
+			this.bWorking = true;
 			// token ok
 			this.variablesConfig.setTokenOk(true);
 			this.variablesConfig.setTokenBadClaims(false);
@@ -52,7 +63,7 @@ public class TestController {
 			Boolean bExpired = runTest(payload.getUrlLogin(), payload.getUrlOk());
 
 			// resto de claims
-     		this.variablesConfig.setTokenExpired(false);
+			this.variablesConfig.setTokenExpired(false);
 			this.variablesConfig.setTokenBadClaims(true);
 			Boolean bClaims = runTest(payload.getUrlLogin(), payload.getUrlOk());
 
@@ -64,21 +75,25 @@ public class TestController {
 			}
 			else {
 				if (bBadsignal) {
-					Errors.add("La aplicación no esta comprobando la firma del token");
+					errors.add("La aplicación no esta comprobando la firma del token");
 				}
 				if (bExpired) {
-					Errors.add("La aplicación no esta comprobando la fecha de expiración del token");
+					errors.add("La aplicación no esta comprobando la fecha de expiración del token");
 				}
 				if (bClaims) {
-					Errors.add("La aplicación no esta comprobando los claims correctamente");
+					errors.add("La aplicación no esta comprobando los claims correctamente");
 				}
 			}
-			model.addAttribute("Errors", Errors);
+			model.addAttribute("errors", errors);
 		}
 		catch (Exception ex) {
 			ex.printStackTrace();
+			errors = new ArrayList<>();
+			errors.add(
+					"Se ha producido un error, es posible que el cliente no este inicializado, vuelva a intentarlo.");
 		}
 		finally {
+			this.bWorking = false;
 			this.variablesConfig.resetTrue();
 		}
 		return result;

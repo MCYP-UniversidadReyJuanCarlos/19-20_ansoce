@@ -42,7 +42,7 @@
         <hudson.model.TextParameterDefinition>
           <name>oktadomain</name>
           <description></description>
-          <defaultValue>https://dev-xxxx.okta.com/oauth2/tfm</defaultValue>
+          <defaultValue>https://dev-622993.okta.com/oauth2/tfm</defaultValue>
           <trim>false</trim>
         </hudson.model.TextParameterDefinition>
       </parameterDefinitions>

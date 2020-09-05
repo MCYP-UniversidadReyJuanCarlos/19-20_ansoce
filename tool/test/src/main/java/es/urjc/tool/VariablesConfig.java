@@ -21,7 +21,6 @@ public class VariablesConfig {
 	@Value("${validation.tokenBadClaims}")
 	private boolean tokenBadClaims;
 
-
 	public boolean isTokenOk() {
 		return this.tokenOk;
 	}
@@ -54,10 +53,11 @@ public class VariablesConfig {
 		this.tokenBadClaims = tokenBadClaims;
 	}
 
-	public void resetTrue(){
-		this.tokenOk=true;
-		this.tokenExpired=true;
-		this.tokenBadSigned=true;
-		this.tokenBadClaims=true;
+	public void resetTrue() {
+		this.tokenOk = true;
+		this.tokenExpired = true;
+		this.tokenBadSigned = true;
+		this.tokenBadClaims = true;
 	}
+
 }
