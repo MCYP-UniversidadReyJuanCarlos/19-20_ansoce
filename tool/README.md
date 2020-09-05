@@ -94,4 +94,4 @@ Adicionalmente el cliente que se utiliza para probar la aplicación se ha config
  
 ![Configuración de las vulnerabilidades de la aplicación cliente](./doc/tool06.png)
 
-Ejemplo de ejecución : [Video](./doc/Tool.mp4)
+Ejemplo de ejecución : [Video](./doc/Tool.m4v)
