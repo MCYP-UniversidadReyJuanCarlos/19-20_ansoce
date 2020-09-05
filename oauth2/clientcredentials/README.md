@@ -16,6 +16,39 @@ El "client credentials grant type" **DEBE** ser utilizado únicamente por client
  
  ![alt text](./doc/client-creds.png "flow")
  
+ 
+  # Modificaciones
+  Se modifica la configuración del proveedor de autorización para que use el flujo de Client Credential:
+ 
+ **authorization-grant-type: client_credentials** 
+ 
+ ````
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          custom-client:
+            client-id: user
+            client-secret: secret
+            client-name: user
+            scope: user
+            provider: custom-provider
+            redirect-uri: "{baseUrl}/authorized"
+            client-authentication-method: basic
+            authorization-grant-type: client_credentials
+        provider:
+          custom-provider:
+            token-uri: http://authorizationserver:8081/oauth/token
+            authorization-uri: http://authorizationserver:8081/oauth/authorize
+messages:
+  base-uri: http://resourceserver:8080/ 
+ ````
+  
+  Video de Ejecución : [Video](./doc/EjemploCC.mp4)
+ 
  # Flujo:
  - Se crea un servidor de autorización ()
  - Se crea un servidor de recursos ()

@@ -41,6 +41,36 @@ Dado que se trata de un flujo basado en redirecciones, el cliente debe ser capaz
 
  - **(E)** El servidor de autorización autentica al cliente, valida el código de autorización y asegura que el URI de redirección recibido coincide con el URI utilizado para redirigir al cliente en el paso (C). Si es válido, el servidor de autorización responde con un token de acceso y, opcionalmente, un token de actualización.
  
+ # Modificaciones
+ Se modifica la configuración del proveedor de autorización para que use el flujo de Authorization Code:
+
+**authorization-grant-type: authorization_code** 
+
+````
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          custom-client:
+            provider: custom-provider
+            client-id: user
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/mensaje"
+            scope: user
+        provider:
+          custom-provider:
+            token-uri: http://authorizationserver:8081/oauth/token
+            authorization-uri: http://localhost:8081/oauth/authorize
+messages:
+  base-uri: http://resourceserver:8080
+
+````
+ 
+ Video de Ejecución : [Video](./doc/EjemploAC.mp4)
  
  # Flujo desde navegador
  Se accede a http://127.0.0.1:9090
