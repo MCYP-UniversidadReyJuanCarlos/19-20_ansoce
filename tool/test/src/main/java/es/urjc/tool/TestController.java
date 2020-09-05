@@ -38,8 +38,8 @@ public class TestController {
 			try {
 				Thread.sleep(2000);
 			}
-			catch (InterruptedException e) {
-				e.printStackTrace();
+			catch (InterruptedException ie) {
+				ie.printStackTrace();
 			}
 		}
 		try {

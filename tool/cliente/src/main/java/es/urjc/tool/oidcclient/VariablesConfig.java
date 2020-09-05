@@ -41,4 +41,5 @@ public class VariablesConfig {
 	public void setbVerifiSign(boolean bVerifiSign) {
 		this.bVerifiSign = bVerifiSign;
 	}
+
 }
