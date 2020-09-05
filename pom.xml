@@ -11,6 +11,8 @@
         <module>web</module>
         <module>oauth2</module>
         <module>openid</module>
+        <module>tool/test</module>
+        <module>tool/cliente</module>
     </modules>
 
     <build>

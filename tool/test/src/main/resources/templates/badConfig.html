@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="login badConfig">
+        <p class="title">Malas noticias</p>
+    </div>
+    <div class="login">
+        <p class="alert">
+        <ul>
+            <li th:each="Error : ${Errors}">
+                <span class="alert" th:text="${Error}"></span>
+            </li>
+        </ul>
+        </p>
+    </div>
+    </p>
+</div>
+</body>
+</html>

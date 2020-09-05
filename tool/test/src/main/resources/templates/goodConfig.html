@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="login goodConfig">
+        <p class="title">Enhorabuena</p>
+    </div>
+    <div class="login">
+        <p>La aplicación verifica correctamente el token</p>
+        <ul>
+            <li>Firma del token</li>
+            <li>Fecha de expiración del token</li>
+            <li>Claim de auditoría</li>
+        </ul>
+        <p>Sin embargo en un flujo de "authorization code"</p>
+        <ul>
+            <li>Se debe de verificar el nonce del token con el de la petición con con el código</li>
+        </ul>
+    </div>
+    </p>
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>

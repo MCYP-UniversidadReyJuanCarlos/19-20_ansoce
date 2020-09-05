@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <form class="login" method="post" th:action="@{/test}">
+        <p class="title">Datos del servidor a verificar</p>
+        <input autofocus name="urlLogin" placeholder="http://client:9090/login" type="text"/>
+        <input name="urlOk" placeholder="http://client:9090/" type="text"/>
+        <button type="submit">
+            <i class="spinner"></i>
+            <span class="state">Lanzar</span>
+        </button>
+    </form>
+    </p>
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>

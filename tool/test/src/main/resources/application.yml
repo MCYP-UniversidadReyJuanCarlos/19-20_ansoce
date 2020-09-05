@@ -1,0 +1,18 @@
+server:
+  port: 8050
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+validation:
+  tokenOk: true
+  tokenExpired: true
+  tokenBadClaims: true
+  tokenBadSigned: true
+
+
+
+
