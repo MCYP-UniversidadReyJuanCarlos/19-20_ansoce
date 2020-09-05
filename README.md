@@ -44,3 +44,9 @@ Se accede a la [consola de jenkins](http://localhost:8181)
 El usuario de acceso es admin/adminpwd
 
 ![alt text](./jenkins/doc/jenkins03.png "jenkins-03")
+
+# Trabajo pendiente en la herramienta de validación.
+ * Poder configurar como parámetro de entrada los test de Selenium.
+ * Integración de la aplicación como plugin de Jenkins
+ * Lanzar los test contra un servidor de recursos y así evaluar de la misma forma que se hacer con la autenticación la autorización.
+ * Generar ejemplo mediante mock de KeyCloak, realizar la simulación en un test integrado en fase de compilación.
