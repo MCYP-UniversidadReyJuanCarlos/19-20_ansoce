@@ -1,0 +1,105 @@
+{
+  "id": "7f5734e7-1a42-4a9e-99ac-4c69d050194c",
+  "version": "2.0",
+  "name": "tfm",
+  "url": "http://localhost:9090",
+  "tests": [{
+    "id": "d2d24e2e-b596-492d-8596-9d61e9ac70a7",
+    "name": "login",
+    "commands": [{
+      "id": "942ce2ee-ef2a-46e1-911c-6565ff3ed241",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1864b51b-afeb-4893-9ad8-6476c9254e70",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x710",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3469e17-bd04-4cbc-b59c-1e7929954e0f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=http://keycloak:8080/auth/realms/TFM",
+      "targets": [
+        ["linkText=http://keycloak:8080/auth/realms/TFM", "linkText"],
+        ["css=tr:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'http://keycloak:8080/auth/realms/TFM')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/oauth2/authorization/keycloak')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'http://keycloak:8080/auth/realms/TFM')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c110ddf9-bb84-427e-88d4-5752764a7100",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='kc-form-login']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "arturo"
+    }, {
+      "id": "5ed3106f-1b59-438a-a710-75020aa7a8a8",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='kc-form-login']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "secret"
+    }, {
+      "id": "c08df883-a143-475c-89ac-299810a7d999",
+      "comment": "",
+      "command": "click",
+      "target": "id=kc-login",
+      "targets": [
+        ["id=kc-login", "id"],
+        ["name=login", "name"],
+        ["css=#kc-login", "css:finder"],
+        ["xpath=//input[@id='kc-login']", "xpath:attributes"],
+        ["xpath=//div[@id='kc-form-buttons']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74154e28-1f98-407f-9beb-cbdde7ccdafb",
+      "comment": "",
+      "command": "click",
+      "target": "id=kc-login",
+      "targets": [
+        ["id=kc-login", "id"],
+        ["name=accept", "name"],
+        ["css=#kc-login", "css:finder"],
+        ["xpath=//input[@id='kc-login']", "xpath:attributes"],
+        ["xpath=//div[@id='kc-form-buttons']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "006d6f87-4589-4951-a168-66899d9c3eca",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d2d24e2e-b596-492d-8596-9d61e9ac70a7"]
+  }],
+  "urls": ["http://localhost:9090/"],
+  "plugins": []
+}

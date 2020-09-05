@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  keycloak:
+    build:
+      context: ./keycloak
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-boot-network
+  tool:
+    build:
+      context: ./test
+      dockerfile: Dockerfile
+    volumes:
+      - /C/Users/nito3/.m2:/root/.m2
+    ports:
+      - "8050:8050"
+      - "5006:5005"
+    networks:
+      - spring-boot-network
+  client:
+    build:
+      context: ./cliente
+      dockerfile: Dockerfile
+      args:
+        verifySign: "${verifySign}"
+        verifyExpired: "${verifyExpired}"
+        verifyClaims: "${verifyClaims}"
+    ports:
+      - "9090:9090"
+      - "5005:5005"
+    volumes:
+      - /C/Users/nito3/.m2:/root/.m2
+    networks:
+      - spring-boot-network
+    depends_on:
+      - keycloak
+    restart: on-failure
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+    networks:
+      - spring-boot-network
+networks:
+  spring-boot-network:
+    driver: bridge
+volumes:
+  m2-repo:
