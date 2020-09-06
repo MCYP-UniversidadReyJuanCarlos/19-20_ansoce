@@ -1,4 +1,9 @@
 # Modulo OAuth 2.0
+
+## Usuarios
+Para logarse en la aplicación : user / password
+Para acceder al proveedor de autenticación: alumno@urjc.es/password
+
 ## ¿Que es OAUTH 2.0?
 OAuth 2.0 (Open Authorization 2.0) es un framework de autorización que permite a aplicaciones de terceros obtener acceso limitado a un servicio HTTP, en nombre del propietario del recurso al que se accede previa gestión de consentimiento entre dicho propietario del recurso y el servicio HTTP, o permitiendo a la aplicación de terceros obtener acceso en su propio nombre.
 [link](https://tools.ietf.org/html/rfc6749)

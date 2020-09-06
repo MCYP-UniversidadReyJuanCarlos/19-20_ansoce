@@ -1,3 +1,10 @@
+## Requisitos
+Para poder ejecutar correctamente los ejemplos se requiere mapear los dominios keycloak y client a 127.0.0.1
+
+## Usuarios
+Para logarse en la aplicación : user / password
+Para acceder a keycloak: arturo/secret para la consola de administración admin/admin
+
 ## OpenID Connect
 
 OpenId Connect es un protocolo de autenticación de usuarios que se basa en OpenId y extiende OAuth 2.0 dotándolo de una capa de autenticación de usuarios sin que estos últimos tengan que almacenar y gestionar las contraseñas.

@@ -95,3 +95,6 @@ Adicionalmente el cliente que se utiliza para probar la aplicación se ha config
 ![Configuración de las vulnerabilidades de la aplicación cliente](./doc/tool06.png)
 
 Ejemplo de ejecución : [Video](./doc/Tool.m4v)
+
+## Recomendación
+Para poder ejecutar correctamente los ejemplos se requiere mapear los dominios keycloak y client a 127.0.0.1
